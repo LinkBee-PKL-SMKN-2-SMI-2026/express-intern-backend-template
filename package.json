@@ -1,0 +1,25 @@
+{
+  "name": "warehouse-management-system-intern-backend-template",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --watch ./src/app/index.ts",
+    "start": "bun ./src/app/index.ts",
+    "build": "bun build ./src/app/index.ts --outdir ./dist",
+    "build:exe": "bun build ./src/app/index.ts --compile --outfile ./bin/warehouse-management-system",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "latest",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "prettier": "^3.9.5",
+    "typescript-eslint": "^8.64.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
