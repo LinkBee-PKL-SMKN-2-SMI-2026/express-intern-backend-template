@@ -1,2 +1,5 @@
 // console.log('Hello via Bun!');
-const test = 'Test';
+let test = 'Test';
+if (test) {
+    test = 'Test'
+}
