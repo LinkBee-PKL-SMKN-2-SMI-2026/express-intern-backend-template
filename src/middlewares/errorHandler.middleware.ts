@@ -9,12 +9,6 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction,
 ): void => {
-  console.log('\n====== 🚨 ADA ERROR MASUK 🚨 ======');
-  console.log('Wujud Error Asli:', err);
-  console.log('Tipe Error:', typeof err);
-  console.log('Nama Error:', err?.name);
-  console.log('=====================================\n');
-
   if (err instanceof ValidationError) {
     logger.warn({ event: 'VALIDATION_ERROR', statusCode: err.statusCode, message: err.message });
     res.status(err.statusCode).json({

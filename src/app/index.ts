@@ -23,9 +23,12 @@ const server = app.listen(PORT, () => {
   const address = server.address();
   const actualPort = typeof address === 'string' ? address : address?.port;
 
-  logger.info({ event: 'SERVER_START', port: actualPort }, `Server berjalan di http://localhost:${actualPort}`);
+  logger.info(
+    { event: 'SERVER_START', port: actualPort },
+    `Server berjalan di http://localhost:${actualPort}`,
+  );
 });
-server.on('error', (error: any) => {
+server.on('error', (error: NodeJS.ErrnoException) => {
   if (error.code === 'EADDRINUSE') {
     logger.fatal({ event: 'PORT_CLASH', port: PORT }, `Port ${PORT} sudah digunakan aplikasi lain`);
     process.exit(1); // Paksa matiin biar ga jalan diem-diem
