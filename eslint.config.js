@@ -10,6 +10,9 @@ export default tseslint.config(
   // Integrasi Prettier untuk mematikan aturan formatting yang bentrok
   eslintPluginPrettierRecommended,
   {
+    ignores: ['src/generated/**'],
+  },
+  {
     rules: {
       'no-console': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
