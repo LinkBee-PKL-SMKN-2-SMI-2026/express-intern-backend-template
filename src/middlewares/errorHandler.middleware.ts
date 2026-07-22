@@ -31,6 +31,6 @@ export const errorHandler = (
   logger.error({ event: 'UNHANDLED_ERROR', message: err.message, stack: err.stack });
   res.status(500).json({
     success: false,
-    message: 'Terjadi kesalahan pada server (BARU NIH)',
+    message: 'Terjadi kesalahan pada server',
   });
 };
